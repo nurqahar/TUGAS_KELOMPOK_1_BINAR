@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <h1>Menu</h1>
+    <form action="/orders" method="post">
+        <% menuItems.forEach(item => { %>
+            <div>
+                <input type="checkbox" name="menuItems" value="<%= item.name %>">
+                <%= item.name %> - <%= formatPrice(item.price) %>
+            </div>
+        <% }) %>
+        <button type="submit">Place Order</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>
